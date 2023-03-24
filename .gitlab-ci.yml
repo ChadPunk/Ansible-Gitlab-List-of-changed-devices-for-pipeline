@@ -1,0 +1,35 @@
+stages:
+  - Build
+  - Get-Diff
+  
+ Build:
+  stage: Build
+  image: !!!ADD A IMAGE THAT HAS PYTHON SETUP!!!
+  script:
+    - python3 get-changed-devices.py $CI_MERGE_REQUEST_ID
+  artifacts:
+    reports:
+      dotenv: my_list.env
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    
+ '''
+    This will run the python file and pass in the merge request ID from the merge
+    as a variable to be used in the API call to find changes being made in the merge request.
+    Once its done it will save the file created which can be used in a later stage of the pipeline.
+ '''
+ 
+ Git-Diff:
+  stage: Get-Diff
+  image: !!!ADD A IMAGE THAT HAS PYTHON SETUP!!!
+  script:
+    - ansible-playbook get-diff.yml -i ./inventory.ini --tags "diff" --extra-vars "temp_hostvar=$DEVICES"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    
+  '''
+    This passes in the "DEVICES" var into our playbook. Inside the playbook you will need to set the hosts var to = temp_hostvar
+    EXAMPLE
+    hosts: "{{ temp_hostvar }}"
+  '''
+    
