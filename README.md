@@ -6,7 +6,8 @@ Replace <b>URL</b> with your url of your GitLab server.<br>
 Update the <b>PRIVATE-TOKEN</b> with your Private Token.<br>
 Update Project ID in URL (from GitLab).<br>
 Modify the compiled folder regex to look for your own folder.<br>
-Have all the required modules installed.
+Have all the required modules installed.<br><br>
 
-Futher explanation in code comments!
+This assumes you can follow along and is not a full write up. You will need to break this open and know how to change this to fit your needs.
+A little further explanation in code comments!
 
