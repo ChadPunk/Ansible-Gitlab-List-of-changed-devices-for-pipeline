@@ -1,5 +1,5 @@
 # Ansible-Gitlab-List-of-changed-devices-for-pipeline
-This will take a merge request and loop through the changes via an API call to GitLab, finding which are network configurations based on our predefined folder, and pass those to a file to be called in a CI/CD pipeline. This can be beneficial if you do not want to call groups and want it to specifically call only changed devices based on a certain rule.
+This will take a merge request and loop through the changes via an API call to GitLab, finding which are network configurations based on our predefined folder, and pass those to a file to be called in a CI/CD pipeline. This can be beneficial if you do not want to call groups and want it to specifically call only changed devices based on a certain rule. If you have hundreds of devices this will save so much time not having to loop through each device to determine if the devices actually have a change.
 
 <h1>Be sure to:</h1><br>
 Replace <b>URL</b> with your url of your GitLab server.<br>
