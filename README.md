@@ -7,3 +7,5 @@ Update the <b>PRIVATE-TOKEN</b> with your Private Token.<br>
 Update Project ID in URL (from GitLab).<br>
 Have all the required modules installed.
 
+Futher explanation in code comments!
+
