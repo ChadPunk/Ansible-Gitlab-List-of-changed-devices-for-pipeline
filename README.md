@@ -4,5 +4,6 @@ This will take a merge request and loop through the changes via an API call to G
 <h1>Be sure to:</h1><br>
 Replace <b>URL</b> with your url of your GitLab server.<br>
 Update the <b>PRIVATE-TOKEN</b> with your Private Token.<br>
+Update Project ID in URL (from GitLab).<br>
 Have all the required modules installed.
 
